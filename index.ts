@@ -7,7 +7,7 @@ console.clear();
 const getPokemon$ = ajax(`https://pokeapi.co/api/v2/pokemon/pikachu`).pipe(
   map(res => res.response.name),
   // subscribedTo("getPokemon$")
-  shareReplay(1)
+  // shareReplay(1)
 );
 
 getPokemon$.subscribe(x => console.log("A", x));
